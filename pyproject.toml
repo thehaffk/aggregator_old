@@ -1,0 +1,37 @@
+[tool.poetry]
+name = "homepp"
+version = "0.1.0"
+description = ""
+authors = ["neekrasov <neekrasov@gmail.com>"]
+readme = "README.md"
+packages = [{include = "homepp"}]
+
+[tool.poetry.dependencies]
+python = "3.11"
+websockets = "^10.4"
+redis = "^4.5.4"
+aio-pika = "^9.0.5"
+grpcio-tools = "^1.53.0"
+grpcio = "^1.53.0"
+aiohttp = "^3.8.4"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.1.0"
+mypy = "^1.0.0"
+flake8 = "^6.0.0"
+flake8-pyproject = "^1.2.2"
+flake8-print = "^5.0.0"
+types-redis = "^4.5.3.1"
+
+[tool.black]
+line-length = 79
+
+[tool.flake8]
+exclude = ['.git','__pycache__', '.env', 'venv', 'migrations',]
+max-line-length = 79
+max-complexivity = 8
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
