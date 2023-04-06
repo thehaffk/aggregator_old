@@ -3,7 +3,7 @@ export
 
  .PHONY: run-service
 run-service:
-	poetry run python3.11 homepp
+	poetry run python3.11 -m homepp
 
  .PHONY: generate-proto
 generate-proto:

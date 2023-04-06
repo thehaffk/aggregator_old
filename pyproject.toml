@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "homepp"
+name = "homepp-aggregator"
 version = "0.1.0"
 description = ""
 authors = ["neekrasov <neekrasov@gmail.com>"]
 readme = "README.md"
-packages = [{include = "homepp"}]
+packages = [{include = "homepp_aggregator"}]
 
 [tool.poetry.dependencies]
 python = "3.11"

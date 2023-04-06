@@ -23,7 +23,9 @@ async def build_server(settings: Settings, handler: Handler):
     redis = Redis(host=settings.redis.host, port=settings.redis.port)  # type: ignore # noqa
     connection = await aio_pika.connect_robust(settings.rabbit.url)
     rabbit_channel = await connection.channel()
-    client_session = aiohttp.ClientSession()
+    client_session = aiohttp.ClientSession(
+        connector=aiohttp.TCPConnector(verify_ssl=False)
+    )
 
     socket_gateway = ControllerSocketGatewayImpl(redis)
     socket_manager = ControllerSocketManagerImpl()

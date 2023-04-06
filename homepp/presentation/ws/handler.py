@@ -33,6 +33,7 @@ async def handle_accept_client(
         async with client_session.get(
             f"{api_url}/controllers/client",
             params={"hw_key": hw_key},
+            ssl=False,
         ) as response:
             response.raise_for_status()
             data = await response.text()
